@@ -1,0 +1,67 @@
+== README pixelpaint.cpp November 18, 2014 ==
+
+======================= FINAL PROJECT: Pixel Paint! =======================
+
+
+======== Description ========
+The program was written on Ubuntu VM of a Macintosh.
+
+pixelpaint.cpp is a simple paint program that allows users to draw an image onto the LCD Screen with various colours, pencil shapes, sizes, as well as erase and clear the image.
+
+======== Physical Setup ========
+The Arduino was connected via usb cable w/ joystick and lcd.
+
+NOTE: The joystick is postioned and wired so that the Vertial arrow points in the leftward direction, towards the arduino. An image is provided of the wiring:
+   http://i.imgur.com/Veq5FF2.jpg
+
+======== Code ======== 
+** IMP NOTE 1: Please do not move the joystick immediately after uploading the code to allow for proper calibration of the joystick.**
+
+** IMP NOTE 2: Please align the potentiometer to its centre position before uploading to ensure proper initial cursor display.**
+
+Upon upload, the LCD shows a blank canvas with the following icons on the bottom of the screen: Colour Selection, Pencil Mode, Eraser Mode, Shape Selection, and Clear, respectively.
+The cursor may be moved around using the joystick and will only draw/erase on the canvas while the joystick is held down.
+
+------- Multiple Files -------
+pixel_paint.cpp:
+- main cpp file containing the setup and loop that calls on the functions
+
+functions.cpp:
+- cpp file that contains the functions used in pixel_paint.cpp
+
+functions.h:
+- header file that allows the two cpp files to be linked
+- enables the functions to be used by various cpp files by adding the line:
+    #include "functions.h"
+
+------- Icons -------
+Colour Selection:
+- user may click on the desired colour and the pencil is now set to that colour
+
+Pencil Mode:
+- allows user to draw on the canvas with the pencil
+- when user clicks on the pencil mode from the eraser mode, the cursor will return to its previous shape and colour from before entering the eraser mode
+
+Eraser Mode:
+- allows user to go over parts of the canvas they wish to erase
+- note: in this mode you cannot change the colour of the eraser 
+
+Shape Selection:
+- user can click on the icon and the shape of the pencil/eraser will change in the following order: square (default), circle, slash.
+
+Size of Cursor:
+- user can change the size of the cursor (size corresponds to approximately a cursor_size by cursor_size space)
+- available sizes: 4, 8, and 12
+- implemented by using the potentiometer and the LEDs indicate what size user is currently using: size 4 = 1 led on, size 8 = 2 leds on, size 12 = 3 leds on
+
+Clear:
+- user can clear the entire canvas to a blank canvas by clicking on this icon
+
+
+== Jessica Huynh & Hailey Musselman == 
+
+
+
+
+
+
